@@ -1,0 +1,166 @@
+:root {
+  /** sunny side **/
+  --blue-background: #C2E9F6;
+  --blue-border: #72cce3;
+  --blue-color: #96dcee;
+  --yellow-background: #fffaa8;
+  --yellow-border: #f5eb71;
+  /** dark side **/
+  --indigo-background: #808fc7;
+  --indigo-border: #5d6baa;
+  --indigo-color: #6b7abb;
+  --gray-border: #e8e8ea;
+  --gray-dots: #e8e8ea;
+  /** general **/
+  --white: #fff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.toggle--checkbox {
+  display: none;
+}
+.toggle--checkbox:checked {
+  /** This will all flip from sun to moon **/
+  /** Change the label color **/
+}
+.toggle--checkbox:checked ~ .background {
+  background: var(--indigo-background);
+}
+.toggle--checkbox:checked + .toggle--label {
+  background: var(--indigo-color);
+  border-color: var(--indigo-border);
+  /** Change the cloud to stars **/
+  /** Change the sun into the moon **/
+  /** Show the dimples on the moon **/
+}
+.toggle--checkbox:checked + .toggle--label .toggle--label-background {
+  left: 30px;
+  width: 2.5px;
+}
+.toggle--checkbox:checked + .toggle--label .toggle--label-background:before {
+  width: 2.5px;
+  height: 2.5px;
+  top: -3px;
+}
+.toggle--checkbox:checked + .toggle--label .toggle--label-background:after {
+  width: 2.5px;
+  height: 2.5px;
+  left: -10px;
+  top: 2.5px;
+}
+.toggle--checkbox:checked + .toggle--label:before {
+  background: var(--white);
+  border-color: var(--gray-border);
+  animation-name: switch;
+  animation-duration: 125ms;
+  animation-fill-mode: forwards;
+}
+.toggle--checkbox:checked + .toggle--label:after {
+  transition-delay: 125ms;
+  opacity: 1;
+}
+.toggle--label {
+  /** Placeholder element, starting at blue **/
+  width: 50px;
+  height: 25px;
+  background: var(--blue-color);
+  border-radius: 25px;
+  border: 2px solid var(--blue-border);
+  display: flex;
+  position: fixed;
+  transition: all 125ms ease-in;
+  /** The sun cloud and moon stars **/
+  /** Sun/Moon element **/
+  /** Gray dots on the moon **/
+}
+.toggle--label-background {
+  width: 2.5px;
+  height: 2px;
+  border-radius: 1.25px;
+  position: relative;
+  background: var(--white);
+  left: 40px;
+  top: 10px;
+  transition: all 75ms ease-in;
+}
+.toggle--label-background:before {
+  content: "";
+  position: absolute;
+  top: -1.25px;
+  width: 10px;
+  height: 1.25px;
+  border-radius: 1.25px;
+  background: var(--white);
+  left: -20px;
+  transition: all 75ms ease-in;
+}
+.toggle--label-background:after {
+  content: "";
+  position: absolute;
+  top: 1.25px;
+  width: 10px;
+  height: 1.25px;
+  border-radius: 1.25px;
+  background: var(--white);
+  left: -10px;
+  transition: all 75ms ease-in;
+}
+.toggle--label:before {
+  animation-name: reverse;
+  animation-duration: 125ms;
+  animation-fill-mode: forwards;
+  transition: all 125ms ease-in;
+  content: "";
+  width: 20.5px;
+  height: 20.5px;
+  border: 1.25px solid var(--yellow-border);
+  top: 1px;
+  left: 1px;
+  position: absolute;
+  border-radius: 841px;
+  background: var(--yellow-background);
+}
+.toggle--label:after {
+  transition-delay: 0ms;
+  transition: all 75ms ease-in;
+  position: absolute;
+  content: "";
+  left: -30px;
+  top: 6px;
+  width: 2.5px;
+  height: 2.5px;
+  background: transparent;
+  border-radius: 50%;
+  opacity: 0;
+}
+
+@keyframes switch {
+  0% {
+    left: 1px;
+  }
+  60% {
+    left: 1px;
+    width: 28px;
+  }
+  100% {
+    left: 26px;
+    width: 20px;
+  }
+}
+@keyframes reverse {
+  0% {
+    left: 26px;
+    width: 20px;
+  }
+  60% {
+    left: 18px;
+    width: 28px;
+  }
+  100% {
+    left: 1px;
+  }
+}

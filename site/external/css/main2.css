@@ -1,0 +1,26 @@
+[data-theme="dark"] {
+  background-color: #141D23 !important;
+  color: #eee;
+}
+
+[data-theme="dark"] .bg-black {
+  background-color: #fff !important;
+}
+
+[data-theme="dark"] .bg-dark {
+  background-color: #141D23 !important;
+}
+
+[data-theme="dark"] .bg-light {
+  background-color: #F1EED9 !important;
+}
+
+[data-theme="dark"] .bg-white {
+  background-color: #F1EED9 !important;
+}
+
+body {
+  background: #F1EED9;
+  height: 100%;
+  margin: 0;
+}
