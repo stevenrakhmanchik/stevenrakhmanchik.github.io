@@ -57,11 +57,16 @@
       <span class="star star--5"></span>
       <span class="star star--6"></span>
     </label><br><br>
-    <p id="demo"></p>
+    <p id="content"/>
     <center><div class="credits">Steven Rakhmanchik <i class="fas fa-heart"></i> 2022</div><br></center>
     <script src="js/dark-mode-switch.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-
+    <script>
+  fetch("https://pirate.monkeyness.com/api/insult", {credentials: "omit"}).then(resp => resp.text()).then(text => {
+  // do anything you want with text
+  content.innerText = text
+})
+    </script>
 </div>
 
   </body>
